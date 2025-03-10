@@ -13,7 +13,7 @@
     sudo usermod -aG docker admin  # Añade el usuario 'admin' al grupo Docker
     ```
 
-    ![Instalación de Docker](images/captura1.png)
+    ![Instalación de Docker](images/Captura1.png)
 
 2. **Instalar servidor Samba y exponer la carpeta home**
 
@@ -23,7 +23,7 @@
     sudo systemctl enable --now smbd  # Habilita y arranca el servicio Samba
     ```
 
-    ![Samba](images/captura2.png)
+    ![Samba](images/Captura2.png)
 
 3. **Descargar las imágenes necesarias**
 
@@ -32,7 +32,7 @@
     docker pull mariadb:latest  # Descarga la imagen de MariaDB
     ```
 
-    ![Descarga de imágenes](images/captura3.png)
+    ![Descarga de imágenes](images/Captura3.png)
 
 4. **Comprobar que se pueden crear contenedores**
 
@@ -41,7 +41,7 @@
     docker run --rm mariadb:latest --version  # Ejecuta un contenedor de MariaDB y muestra la versión
     ```
 
-    ![Ejecución de los contenedores de prueba](images/captura4.png)
+    ![Ejecución de los contenedores de prueba](images/Captura4.png)
 
 ---
 
@@ -54,11 +54,11 @@
     mkdir -p ~/Music/docker1/data  # Crea la carpeta para los datos de MariaDB
     ```
 
-    ![Creación de las carpetas](images/captura5.png)
+    ![Creación de las carpetas](images/Captura5.png)
 
 2. **Crear el archivo `compose.yml`**
 
-    ![Archivo compose.yml](images/captura6.png)
+    ![Archivo compose.yml](images/Captura6.png)
 
 3. **Lanzar los servicios simultáneamente**
 
@@ -66,7 +66,7 @@
     docker-compose -f ~/Music/docker1/compose.yml up -d  # Levanta los servicios definidos en el archivo compose.yml
     ```
 
-    ![Ejecución del comando docker-compose](images/captura7.png)
+    ![Ejecución del comando docker-compose](images/Captura7.png)
 
 ---
 
@@ -79,11 +79,11 @@
     cp ~/Music/docker1/compose.yml ~/Music/docker1/compose_8383.yml  # Copia el archivo compose.yml para el puerto 8383
     ```
 
-    ![Nuevos entornos](images/captura8.png)
+    ![Nuevos entornos](images/Captura8.png)
 
 2. **Editar `compose_8282.yml` para cambiar nombres de contenedores y puertos:**
 
-    ![Ejecución del comando docker-compose](images/captura9.png)
+    ![Ejecución del comando docker-compose](images/Captura9.png)
 
 3. **Repetir el proceso para `compose_8383.yml` cambiando los nombres a `db3` y `web3` y asignando el puerto `8383:80`.**
 
@@ -94,7 +94,7 @@
     docker-compose -f ~/Music/docker1/compose_8383.yml up -d  # Levanta los servicios definidos en el archivo compose_8383.yml
     ```
 
-    ![Contenedores en ejecución en los puertos 8181, 8282 y 8383](images/captura10.png)
+    ![Contenedores en ejecución en los puertos 8181, 8282 y 8383](images/Captura10.png)
 
 ---
 
@@ -106,6 +106,6 @@ Para comprobar que los tres WordPress están en funcionamiento:
 docker ps  # Muestra los contenedores en ejecución
 ```
 
-![Contenedores corriendo](images/captura11.png)
+![Contenedores corriendo](images/Captura11.png)
 
 Gracias por ver
